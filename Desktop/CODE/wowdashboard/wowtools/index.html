@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realm Profit Data</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'wow-gold': '#ffd100',
+                        'wow-brown': '#4a3721',
+                        'wow-green': '#1eff00'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-900 text-wow-gold p-6 min-h-screen bg-gradient-to-b from-black/70 to-black/70 bg-fixed relative">
+  
+
+    <!-- Main Content -->
+    <div class="max-w-3xl mx-auto bg-black/90 border-2 border-wow-brown rounded-lg p-6 shadow-2xl">
+        <!-- Token Prices -->
+        <div class="text-sm uppercase tracking-wide mb-1">EU Token</div>
+        <div class="text-wow-green font-bold text-lg flex items-center">
+            337,325g
+            <img src="/static/images/gold.gif" alt="Gold" class="h-4 w-4 ml-1">
+        </div>
+        <div class="text-sm uppercase tracking-wide mb-1">US Token</div>
+        <div class="text-wow-green font-bold text-lg flex items-center">
+            258,512g
+            <img src="/static/images/gold.gif" alt="Gold" class="h-4 w-4 ml-1">
+        </div>
+
+
+        <div class="flex items-center justify-center space-x-4 mb-8">
+            <span class="text-wow-brown text-2xl">✦</span>
+            <h1 class="text-4xl font-bold text-center uppercase tracking-wide">Realm Profit Data</h1>
+            <span class="text-wow-brown text-2xl">✦</span>
+        </div>
+
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-center uppercase mb-6 pb-2 border-b-2 border-wow-brown">
+                Weighted Average Profit per Item
+            </h2>
+            <div class="overflow-x-auto">
+                <table class="w-full bg-black/30">
+                    <thead>
+                        <tr>
+                            <th class="px-4 py-3 text-left bg-wow-brown text-wow-gold uppercase text-sm font-bold">Realm</th>
+                            <th class="px-4 py-3 text-left bg-wow-brown text-wow-gold uppercase text-sm font-bold">Weighted Average Profit per Item (g)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr class="hover:bg-wow-brown/30 border-b border-wow-brown/50">
+                            <td class="px-4 py-3">Silvermoon</td>
+                            <td class="px-4 py-3 text-wow-green font-bold">2253.09</td>
+                        </tr>
+                        
+                        <tr class="hover:bg-wow-brown/30 border-b border-wow-brown/50">
+                            <td class="px-4 py-3">Drak&#39;thul</td>
+                            <td class="px-4 py-3 text-wow-green font-bold">1938.64</td>
+                        </tr>
+                        
+                        <tr class="hover:bg-wow-brown/30 border-b border-wow-brown/50">
+                            <td class="px-4 py-3">Soulflayer</td>
+                            <td class="px-4 py-3 text-wow-green font-bold">1641.51</td>
+                        </tr>
+                        
+                        <tr class="hover:bg-wow-brown/30 border-b border-wow-brown/50">
+                            <td class="px-4 py-3">Howling Fjord</td>
+                            <td class="px-4 py-3 text-wow-green font-bold">1515.47</td>
+                        </tr>
+                        
+                        <tr class="hover:bg-wow-brown/30 border-b border-wow-brown/50">
+                            <td class="px-4 py-3">Ravencrest</td>
+                            <td class="px-4 py-3 text-wow-green font-bold">1283.72</td>
+                        </tr>
+                        
+                        <tr class="hover:bg-wow-brown/30 border-b border-wow-brown/50">
+                            <td class="px-4 py-3">Blackmoore</td>
+                            <td class="px-4 py-3 text-wow-green font-bold">1278.68</td>
+                        </tr>
+                        
+                        <tr class="hover:bg-wow-brown/30 border-b border-wow-brown/50">
+                            <td class="px-4 py-3">Hyjal</td>
+                            <td class="px-4 py-3 text-wow-green font-bold">1259.19</td>
+                        </tr>
+                        
+                        <tr class="hover:bg-wow-brown/30 border-b border-wow-brown/50">
+                            <td class="px-4 py-3">Blackrock</td>
+                            <td class="px-4 py-3 text-wow-green font-bold">1228.27</td>
+                        </tr>
+                        
+                        <tr class="hover:bg-wow-brown/30 border-b border-wow-brown/50">
+                            <td class="px-4 py-3">Ragnaros</td>
+                            <td class="px-4 py-3 text-wow-green font-bold">1227.29</td>
+                        </tr>
+                        
+                        <tr class="hover:bg-wow-brown/30 border-b border-wow-brown/50">
+                            <td class="px-4 py-3">Stormscale</td>
+                            <td class="px-4 py-3 text-wow-green font-bold">1133.64</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
+
+<!-- Token Price Chart -->
+<div class="mt-10 bg-black/90 border-2 border-wow-brown rounded-lg p-6 shadow-2xl">
+    <h2 class="text-2xl font-bold text-center uppercase mb-6 pb-2 border-b-2 border-wow-brown">
+        Token Price Trend
+    </h2>
+    <canvas id="tokenPriceChart" class="w-full h-64"></canvas>
+</div>
+
+<!-- Include Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const ctx = document.getElementById('tokenPriceChart').getContext('2d');
+    const tokenPriceChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ["2024-11-16 06:55:24", "2024-11-16 07:26:05"], // Full timestamps from token.csv
+            datasets: [
+                {
+                    label: 'EU Token Price',
+                    data: [337051, 337325], // EU prices
+                    borderColor: '#1eff00',
+                    backgroundColor: 'rgba(30, 255, 0, 0.1)',
+                    tension: 0.4,
+                },
+                {
+                    label: 'US Token Price',
+                    data: [258781, 258512], // US prices
+                    borderColor: '#ffd100',
+                    backgroundColor: 'rgba(255, 209, 0, 0.1)',
+                    tension: 0.4,
+                },
+            ],
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#ffd100',
+                    },
+                },
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        color: '#ffd100',
+                    },
+                    grid: {
+                        color: 'rgba(255, 255, 255, 0.1)',
+                    },
+                },
+                y: {
+                    ticks: {
+                        color: '#ffd100',
+                    },
+                    grid: {
+                        color: 'rgba(255, 255, 255, 0.1)',
+                    },
+                },
+            },
+        },
+    });
+</script>
+
+
+
+</html>
