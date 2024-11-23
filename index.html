@@ -25,16 +25,16 @@
 
     <!-- Main Content -->
     <div class="max-w-3xl mx-auto bg-black/90 border-2 border-wow-brown rounded-lg p-6 shadow-2xl">
-        <p>Last updated: 22-11-2024 16:00</p>
+        <p>Last updated: 23-11-2024 16:00</p>
         <!-- Token Prices -->
         <div class="text-sm uppercase tracking-wide mb-1">EU Token</div>
         <div class="text-wow-green font-bold text-lg flex items-center">
-            359,725g
+            355,392g
             <img src="/static/images/gold.gif" alt="Gold" class="h-4 w-4 ml-1">
         </div>
         <div class="text-sm uppercase tracking-wide mb-1">US Token</div>
         <div class="text-wow-green font-bold text-lg flex items-center">
-            289,624g
+            271,700g
             <img src="/static/images/gold.gif" alt="Gold" class="h-4 w-4 ml-1">
         </div>
 
@@ -59,53 +59,53 @@
                     <tbody>
                         
                         <tr class="hover:bg-wow-brown/30 border-b border-wow-brown/50">
-                            <td class="px-4 py-3">Argent Dawn</td>
-                            <td class="px-4 py-3 text-wow-green font-bold">5167.93</td>
+                            <td class="px-4 py-3">Kazzak</td>
+                            <td class="px-4 py-3 text-wow-green font-bold">4263.43</td>
                         </tr>
                         
                         <tr class="hover:bg-wow-brown/30 border-b border-wow-brown/50">
                             <td class="px-4 py-3">Drak&#39;thul</td>
-                            <td class="px-4 py-3 text-wow-green font-bold">3385.50</td>
+                            <td class="px-4 py-3 text-wow-green font-bold">3639.99</td>
                         </tr>
                         
                         <tr class="hover:bg-wow-brown/30 border-b border-wow-brown/50">
                             <td class="px-4 py-3">Gordunni</td>
-                            <td class="px-4 py-3 text-wow-green font-bold">2929.44</td>
+                            <td class="px-4 py-3 text-wow-green font-bold">2923.54</td>
+                        </tr>
+                        
+                        <tr class="hover:bg-wow-brown/30 border-b border-wow-brown/50">
+                            <td class="px-4 py-3">Silvermoon</td>
+                            <td class="px-4 py-3 text-wow-green font-bold">2597.29</td>
                         </tr>
                         
                         <tr class="hover:bg-wow-brown/30 border-b border-wow-brown/50">
                             <td class="px-4 py-3">Soulflayer</td>
-                            <td class="px-4 py-3 text-wow-green font-bold">2268.15</td>
+                            <td class="px-4 py-3 text-wow-green font-bold">2204.15</td>
+                        </tr>
+                        
+                        <tr class="hover:bg-wow-brown/30 border-b border-wow-brown/50">
+                            <td class="px-4 py-3">Argent Dawn</td>
+                            <td class="px-4 py-3 text-wow-green font-bold">1753.09</td>
                         </tr>
                         
                         <tr class="hover:bg-wow-brown/30 border-b border-wow-brown/50">
                             <td class="px-4 py-3">Howling Fjord</td>
-                            <td class="px-4 py-3 text-wow-green font-bold">1461.20</td>
-                        </tr>
-                        
-                        <tr class="hover:bg-wow-brown/30 border-b border-wow-brown/50">
-                            <td class="px-4 py-3">Hyjal</td>
-                            <td class="px-4 py-3 text-wow-green font-bold">1389.41</td>
-                        </tr>
-                        
-                        <tr class="hover:bg-wow-brown/30 border-b border-wow-brown/50">
-                            <td class="px-4 py-3">Dentarg</td>
-                            <td class="px-4 py-3 text-wow-green font-bold">1304.54</td>
-                        </tr>
-                        
-                        <tr class="hover:bg-wow-brown/30 border-b border-wow-brown/50">
-                            <td class="px-4 py-3">Ragnaros</td>
-                            <td class="px-4 py-3 text-wow-green font-bold">1163.93</td>
+                            <td class="px-4 py-3 text-wow-green font-bold">1684.47</td>
                         </tr>
                         
                         <tr class="hover:bg-wow-brown/30 border-b border-wow-brown/50">
                             <td class="px-4 py-3">Blackrock</td>
-                            <td class="px-4 py-3 text-wow-green font-bold">1137.39</td>
+                            <td class="px-4 py-3 text-wow-green font-bold">1615.68</td>
                         </tr>
                         
                         <tr class="hover:bg-wow-brown/30 border-b border-wow-brown/50">
-                            <td class="px-4 py-3">Antonidas</td>
-                            <td class="px-4 py-3 text-wow-green font-bold">1068.88</td>
+                            <td class="px-4 py-3">Hyjal</td>
+                            <td class="px-4 py-3 text-wow-green font-bold">1358.59</td>
+                        </tr>
+                        
+                        <tr class="hover:bg-wow-brown/30 border-b border-wow-brown/50">
+                            <td class="px-4 py-3">Dentarg</td>
+                            <td class="px-4 py-3 text-wow-green font-bold">1156.38</td>
                         </tr>
                         
                     </tbody>
@@ -136,18 +136,18 @@
     const tokenPriceChart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: ["20-11-2024 03:29", "20-11-2024 03:31", "20-11-2024 16:00", "21-11-2024 16:01", "22-11-2024 16:00"], // Full timestamps from token.csv
+            labels: ["20-11-2024 03:29", "20-11-2024 03:31", "20-11-2024 16:00", "21-11-2024 16:01", "22-11-2024 16:00", "23-11-2024 16:00"], // Full timestamps from token.csv
             datasets: [
                 {
                     label: 'EU Token Price',
-                    data: [353496, 353496, 346511, 356841, 359725], // EU prices
+                    data: [353496, 353496, 346511, 356841, 359725, 355392], // EU prices
                     borderColor: '#1eff00',
                     backgroundColor: 'rgba(30, 255, 0, 0.1)',
                     tension: 0.4,
                 },
                 {
                     label: 'US Token Price',
-                    data: [267739, 267739, 276599, 292037, 289624], // US prices
+                    data: [267739, 267739, 276599, 292037, 289624, 271700], // US prices
                     borderColor: '#ffd100',
                     backgroundColor: 'rgba(255, 209, 0, 0.1)',
                     tension: 0.4,
